@@ -1,21 +1,67 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { View, Image } from "react-native";
+import Home from "./src/screens/Home";
+import Views from "./src/screens/Views";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{ headerStyle: { backgroundColor: "#031C47" } }}
+      >
+        <Stack.Screen
+          name="Home"
+          options={{
+            title: "",
+            headerTitle: () => (
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "100%",
+                  marginTop: 5,
+                }}
+              >
+                <Image
+                  resizeMode="contain"
+                  style={{ height: 50, width: 100 }}
+                  source={require("./src/assets/logo.png")}
+                />
+              </View>
+            ),
+          }}
+          component={Home}
+        />
+        <Stack.Screen
+          name="Views"
+          options={{
+            title: "",
+            headerTitle: () => (
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "100%",
+                  marginTop: 5,
+                }}
+              >
+                <Image
+                  resizeMode="contain"
+                  style={{ height: 50, width: 100 }}
+                  source={require("./src/assets/logo.png")}
+                />
+              </View>
+            ),
+          }}
+          component={Views}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
