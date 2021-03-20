@@ -1,0 +1,12 @@
+{
+  "name": "quikieapps_mobile",
+  "displayName": "quikieapps_mobile",
+  "expo": {
+    "name": "quikieapps_mobile",
+    "slug": "quikieapps_mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
