@@ -3,8 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { View, Image } from "react-native";
 import Home from "./src/screens/Home";
-import Views from "./src/screens/Views";
-
+import Tablecomp from "./src/components/Tablecomp";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -59,7 +58,7 @@ export default function App() {
               </View>
             ),
           }}
-          component={Views}
+          component={Tablecomp}
         />
       </Stack.Navigator>
     </NavigationContainer>
